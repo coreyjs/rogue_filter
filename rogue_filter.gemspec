@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = RogueFilter::VERSION
   s.authors     = ["Corey Schaf"]
   s.email       = ["cschaf@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of RogueFilter."
-  s.description = "TODO: Description of RogueFilter."
+  s.homepage    = "https://github.com/corey-rb/rogue_filter"
+  s.summary     = "Simple request parameters to filterable methods on models"
+  s.description = "Description of RogueFilter."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
