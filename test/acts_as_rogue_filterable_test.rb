@@ -1,12 +1,12 @@
 require 'test_helper'
 
-class ActsAsRogueFilter::Test < ActiveSupport::TestCase
-  def has_class
+class ActsAsFilter < ActiveSupport::TestCase
+  def test_has_class
     c = Car.new
-    assert(c)
+    assert_kind_of(c, Car.class)
   end
 
-  def responds_to_filterable_method
-    assert_respond_to(Product.new, :filterable)
+  def test_responds_to_filterable_method
+    assert_respond_to(Car.new, :filterable)
   end
 end
