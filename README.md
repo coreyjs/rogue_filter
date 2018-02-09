@@ -13,9 +13,15 @@ scope :rogue_name, -> (name) { where name: name }
 All custom scopes that you want to get called must be prefixed with `rogue_`.
 
 controller.rb
+
 ```ruby
-Car.filterable({name: 'Roguefilter'})
+class Car < ApplicationRecord
+  acts_as_filterable
+
+  scope :rogue_name, -> (name) { where name: name }
+end
 ```
+* RogueFilter will define the class method `filterable` on all models that call `acts_as_filterable`
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -39,3 +45,6 @@ Contribution directions go here.
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+## Mention
+This was a learning project, idea was taken from https://www.justinweiss.com/articles/search-and-filter-rails-models-without-bloating-your-controller/ .
