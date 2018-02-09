@@ -7,19 +7,18 @@ Rogue Filter makes it easy to add scopes to ActiveRecord models.  This is helpfu
 ## Usage
 model.rb
 ```ruby
-scope :rogue_name, -> (name) { where name: name }
-```
+class Car < ApplicationRecord
+  acts_as_filterable
+
+  scope :rogue_name, -> (name) { where name: name }
+end```
 
 All custom scopes that you want to get called must be prefixed with `rogue_`.
 
 controller.rb
 
 ```ruby
-class Car < ApplicationRecord
-  acts_as_filterable
-
-  scope :rogue_name, -> (name) { where name: name }
-end
+Car.filterable({name: 'Corey'})
 ```
 * RogueFilter will define the class method `filterable` on all models that call `acts_as_filterable`
 
